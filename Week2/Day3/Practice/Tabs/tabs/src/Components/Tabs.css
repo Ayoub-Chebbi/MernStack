@@ -1,0 +1,8 @@
+.tab-headers{
+    display: flex;
+}
+
+.tab-headers div{
+    margin: 20px;
+    border: 1px solid black;
+}
