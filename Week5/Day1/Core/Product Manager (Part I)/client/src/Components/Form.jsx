@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
-const Form = () => {
+const Form = (props) => {
     const [ProductName, setProductName] = useState("")
     const [ProductPrice, setProductPrice] = useState(0)
     const [ProductDescription, setProductDescription] = useState("")
-    
+    const {product , setProduct} = props
     const handleSubmit = (e)=>{
         e.preventDefault()
             axios.post("http://localhost:7000/api/product",{
@@ -14,6 +14,7 @@ const Form = () => {
             })
                 .then(res=>{
                     console.log(res.data)
+                    setProduct([...product,res.data])
                 })
                 .catch(err => console.log(err))
     }

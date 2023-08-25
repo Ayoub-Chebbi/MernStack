@@ -3,5 +3,7 @@ console.log(ProductControllers)
 
 module.exports = (app)=>{
     app.post("/api/product", ProductControllers.CreateProduct)
+    app.get('/api/product', ProductControllers.getAllProducts);
+    app.get('/api/product/:id', ProductControllers.getProduct);
 }
 
