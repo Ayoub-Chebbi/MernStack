@@ -1,13 +1,12 @@
 const express = require("express")
-const cors = require('cors')
 const app = express()
+const cors = require("cors")
 
-app.use(cors(),express.json(),express.urlencoded({extended: true}))
+app.use(cors(), express.json() , express.urlencoded({extended: true}))
 
-require("./config/notes.config")
 require("dotenv").config()
-require('./routes/notes.routes')(app);
-
+require("./config/config")
+require("./routes/routes")(app)
 
 const port = process.env.PORT
 app.listen(port, ()=>{
